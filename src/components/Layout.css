@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+}
+
+.header-wrapper {
+  display: flex;
+  height: 72px;
+  align-items: center;
+  gap: 16px;
+  background: #1871be;
+  
+ padding: 0 20px;
+}
+.header-wrapper p {
+  color: #fff;
+  cursor: pointer;
+  font-size: bold;
+}
+
+.main-content-wrapper {
+  flex: 1;
+ 
+}

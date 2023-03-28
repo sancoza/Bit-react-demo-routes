@@ -1,0 +1,11 @@
+
+.post {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post:hover {
+  color: #1871be;
+}

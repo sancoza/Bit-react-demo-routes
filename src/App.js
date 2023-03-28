@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { Route, Routes, Navigate } from 'react-router';
+import { Home } from './components/Home';
+import { About } from './components/About';
+import { Contact } from './components/Contact';
 import './App.css';
+import { NotFoundPage } from './components/NotFoundPage';
+import { Layout } from './components/Layout';
+import { Posts } from './components/Posts';
+import { SinglePost } from './components/SinglePost';
+import { CreatePostPage } from './components/CreatePostPage';
+import { UpdatePostPage } from './components/UpdatePostPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+    <Route path={"/"} element={<Layout/>} > 
+    <Route path={'not-found-page'} element={<NotFoundPage />} />
+      <Route path={'/home'} element={<Home />} />
+      <Route path={'/about'} element={<About />} /> 
+      <Route path={'/contact'} element={<Contact />} />
+      <Route path={'/posts'} element={<Posts/>} />
+       <Route path={'/posts/:id'} element={<SinglePost/>} />
+       <Route path={'/posts/:id/update'} element={<UpdatePostPage/>} />
+      <Route path={'/posts/create'} element={<CreatePostPage />} />
+     
+    </Route>
+      <Route path="*" element={<Navigate replace to={'/not-found-page'} />} />
+    </Routes>
   );
 }
 
